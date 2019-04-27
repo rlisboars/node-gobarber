@@ -1,0 +1,13 @@
+{% for hour in scheduled %}
+  <label class="{%if not hour.user %}disabled{% endif %}" for="time-{{ hour.time }}">
+    {{ hour.time }}
+  </label>
+  {% if hour.user %}
+  <div class="provider">
+    <div>
+      <img src="/files/{{ hour.user.avatar }}" alt="Avatar">
+      <strong>{{ hour.user.name }}</strong>
+    </div>
+  </div>
+  {% endif %}
+{% endfor %}
